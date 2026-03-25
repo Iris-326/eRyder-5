@@ -3,8 +3,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Scanner;
 
-public class UserRegistration_2 {
-class UserRegistration {
+public class UserRegistration {
 
     private static final double VIP_DISCOUNT_UNDER_18_BIRTHDAY = 25.0;
     private static final double VIP_DISCOUNT_UNDER_18 = 20.0;
@@ -68,7 +67,7 @@ class UserRegistration {
         String cvvInput = scanner.nextLine();
         cvv = Integer.parseInt(cvvInput);
         validCVV = analyseCVV(cvv);
-
+        
         scanner.close();
 
         finalCheckpoint();
@@ -214,7 +213,6 @@ class UserRegistration {
         System.out.println("A fee of " + feeToCharge + " has been charged to your card ending with " + lastFourDigits);
     }
 
-    @Override
     public String toString() {
         String cardNumberStr = String.valueOf(cardNumber);
         String censoredPart = cardNumberStr.substring(0, cardNumberStr.length() - 4).replaceAll(".", "*");
@@ -232,13 +230,4 @@ class UserRegistration {
 
         return result;
     }
-}
-
-class Main {
-    public static void main(String[] args) {
-        UserRegistration user = new UserRegistration();
-        user.registration();
-        System.out.println(user);
-    }
-}
 }

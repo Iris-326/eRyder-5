@@ -19,10 +19,16 @@ public class Main {
         String sent4 = "The customer support was helpful and responsive.";
         String sent5 = "I would recommend this e-Bike to my friends and family.";
         
+        UserRegistration user = new UserRegistration();
+        user.registration();
+        System.out.println(user);
 
         Feedback feedback = new Feedback("John", "Doe", "john.doe@example.com");
-        feedback.analyseFeedback(true, sent1, sent2, sent3, sent4, sent5);
+        feedback.analyseFeedback(true, sent1, sent2, sent3, sent4, sent5); 
         System.out.println(feedback);
+
+        AdminPanel panel = new AdminPanel();
+        panel.userManagementOptions(); 
     }
         
 }

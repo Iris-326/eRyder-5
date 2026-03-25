@@ -19,8 +19,8 @@ public class ERyder {
         this.batteryLevel = batteryLevel;
         this.isAvailable = isAvailable;
         this.kmDriven = kmDriven;
-        this.LINKED_ACCOUNT = "user123";
-        this.LINCKED_PHONE_NUMBER = "1234567890";
+        this.LINKED_ACCOUNT = linkedAccount;
+        this.LINCKED_PHONE_NUMBER = linkedPhoneNumber;
         this.totalUsageInMinutes = 0;
         this.totalFare = 0.0;
     }
@@ -53,7 +53,7 @@ public class ERyder {
             System.out.println("Battery level must be between 0 and 100.");
         }
     }
-    public boolean isAvaliable() {
+    public boolean isAvailable() {
         return isAvailable;
     }
     public void setAvailable(boolean isAvailable) {
@@ -71,7 +71,11 @@ public class ERyder {
         System.out.println("Total Usage in Minutes: " + totalUsageInMinutes);
         System.out.println("Total Fare: $" + totalFare);
     }
+
     public double calculateFare(int usageInMinutes) {
-        return totalFare = BASE_FARE + (PER_MINUTE_FARE * totalUsageInMinutes);
+        this.totalUsageInMinutes += usageInMinutes; 
+        this.totalFare = BASE_FARE + (PER_MINUTE_FARE * usageInMinutes); 
+        return this.totalFare;
+        
     }
 }
