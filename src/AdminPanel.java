@@ -224,5 +224,8 @@ public class AdminPanel {
         if(!found) {
             System.out.println("No user found with this email address");
         }
+        BikeRental br = new BikeRental();
+        br.simulateApplicationInput();
     }
+    
 }
