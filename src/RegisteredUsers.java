@@ -33,7 +33,6 @@ public class RegisteredUsers {
     public String getUserType() { return userType; }
     public String[] getLastThreeTrips() { return lastThreeTrips; }
     
-    
     public void setFullName(String f) { fullName = f; }
     public void setEmailAddress(String e) { emailAddress = e; }
     public void setDateOfBirth(String d) { dateOfBirth = d; }

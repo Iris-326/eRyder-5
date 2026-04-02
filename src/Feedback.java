@@ -15,9 +15,6 @@ public class Feedback {
         this.longFeedback = false;
     }
 
-// feedbackUsingConcatenation 连接5个santences成一个完整的反馈字符串，用+号
-// feedbackUsingStringBuilder 连接5个santences成一个完整的反馈字符串，用StringBuilder
-
     public void analyseFeedback(boolean isConcatenation, String sent1, String sent2, String sent3, String sent4, String sent5) {
         if (isConcatenation == true) {
             this.completeFeedback = feedbackUsingConcatenation(sent1, sent2, sent3, sent4, sent5);
@@ -38,8 +35,6 @@ public class Feedback {
         sb.append(sent1).append(sent2).append(sent3).append(sent4).append(sent5);
         return sb;
     }
-    
-// checkFeedbackLength 判断完整反馈字符串是否超过500个字符，如果超过则将longFeedback设置为true，并返回这个值
 
     private boolean checkFeedbackLength(String completeFeedback) {
         if (completeFeedback.length() > 500) {
