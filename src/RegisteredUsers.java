@@ -61,4 +61,12 @@ public class RegisteredUsers {
         }
         return s;
     }
+    
+    public double calculateFare(double baseFare) {
+        return baseFare;
+    }
+    
+    public void displayUserType() {
+        System.out.println("Regular User");
+    }
 }

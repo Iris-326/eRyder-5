@@ -9,6 +9,19 @@ public class UserService {
         this.userList = userList;
     }
 
+    public RegisteredUsers createUser(String fullName, String emailAddress, String dateOfBirth, long cardNumber,
+                                     String cardExpiryDate, String cardProvider, int cvv, String userType, String[] lastThreeTrips) {
+        RegisteredUsers newUser;
+        if (userType.equalsIgnoreCase("VIP")) {
+            newUser = new VIPUser(fullName, emailAddress, dateOfBirth, cardNumber, cardExpiryDate, cardProvider, cvv, userType, lastThreeTrips);
+        } else {
+            newUser = new RegularUser(fullName, emailAddress, dateOfBirth, cardNumber, cardExpiryDate, cardProvider, cvv, userType, lastThreeTrips);
+        }
+        userList.add(newUser);
+        System.out.println("User added.");
+        return newUser;
+    }
+    
     public void addUser(RegisteredUsers newUser) {
         userList.add(newUser);
         System.out.println("User added.");

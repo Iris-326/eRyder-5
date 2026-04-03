@@ -28,7 +28,7 @@ public class AdminPanel {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Add New Users logic should be here, calling UserService.");
+                    addNewUsers();
                     break;
                 case 2:
                     userService.retrieveUsers();
@@ -56,6 +56,40 @@ public class AdminPanel {
                     System.out.println("Invalid choice. Please try again");
             }
         } while (choice != 7);
+    }
+    
+    public void addNewUsers() {
+        System.out.println("Add New User");
+        System.out.print("Enter full name: ");
+        String fullName = scanner.nextLine();
+        
+        System.out.print("Enter email address: ");
+        String emailAddress = scanner.nextLine();
+        
+        System.out.print("Enter date of birth: ");
+        String dateOfBirth = scanner.nextLine();
+        
+        System.out.print("Enter card number: ");
+        long cardNumber = scanner.nextLong();
+        scanner.nextLine();
+        
+        System.out.print("Enter card expiry date: ");
+        String cardExpiryDate = scanner.nextLine();
+        
+        System.out.print("Enter card provider: ");
+        String cardProvider = scanner.nextLine();
+        
+        System.out.print("Enter CVV: ");
+        int cvv = scanner.nextInt();
+        scanner.nextLine();
+        
+        System.out.print("Enter user type (Regular/VIP): ");
+        String userType = scanner.nextLine();
+        
+        String[] lastThreeTrips = new String[3];
+        
+        RegisteredUsers newUser = userService.createUser(fullName, emailAddress, dateOfBirth, cardNumber, cardExpiryDate, cardProvider, cvv, userType, lastThreeTrips);
+        rentalService.simulateApplicationInput(newUser);
     }
 
     public void managePendingBikeRequests() {
